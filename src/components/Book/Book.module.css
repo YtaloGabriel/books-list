@@ -1,0 +1,87 @@
+.book {
+  display: flex;
+  background-color: rgba(0, 0, 0, .2);
+  width: 32rem;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 .7rem rgba(0, 0, 0, .6);
+}
+
+.image {
+  width: 185px;
+  height: 266px;
+  border-radius: .5rem;
+}
+
+.bookInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+}
+
+.title {
+  color: var(--blue2);
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title::after {
+  content: "";
+  width: 3rem;
+  height: .3rem;
+  background-color: var(--blue2);
+  margin: .5rem 0;
+  border-radius: .2rem;
+}
+
+.numbers {
+  display: flex;
+  gap: .5rem;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.summary {
+  margin: 1rem 0;
+  flex: 1;
+  font-style: italic;
+  color: #fff;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.actions > button {
+  flex: 1;
+  height: 2.4rem;
+  border-radius: .3rem;
+  border: none;
+  cursor: pointer;
+}
+
+.actions > button:active {
+  transform: translateY(.1rem);
+}
+
+.editButton {
+  background-color: #27668C;
+}
+
+.editButton:hover {background-color: #48AFE5;}
+
+
+.deleteButton {
+  background-color: #91292D;
+}
+
+.deleteButton:hover {background-color: #D03A41;}
+
