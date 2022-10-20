@@ -1,11 +1,15 @@
 import React from 'react';
+import { GlobalContext } from '../../GlobalContext';
 import Book from '../Book/Book';
+import CreateModal from '../Modal/CreateModal';
 import styles from './Books.module.css';
 
 const API_LINK = 'https://pweb-crud-mongodb.herokuapp.com/books';
 
 const Books = () => {
   const [booksData, setBooksData] = React.useState([]);
+
+  const { createModal, setCreateModal } = React.useContext(GlobalContext);
 
   // Get results from API
   React.useEffect(() => {
@@ -25,9 +29,16 @@ const Books = () => {
 
   console.log(booksData);
 
+  const addModal = () => {
+    setCreateModal(true);
+  };
+
   return (
     <>
-      <button className={styles.addButton}>Add a Book</button>
+      {createModal && <CreateModal />}
+      <button className={styles.addButton} onClick={addModal}>
+        Add a Book
+      </button>
       <section className={styles.books}>
         {booksData?.map((book, index) => (
           <Book
@@ -39,6 +50,8 @@ const Books = () => {
             summary={book.summary}
           />
         ))}
+
+        {!booksData.length && <p>Nenhum livro foi adicionado</p>}
       </section>
     </>
   );
