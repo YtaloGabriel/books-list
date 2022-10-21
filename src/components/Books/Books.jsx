@@ -48,6 +48,7 @@ const Books = () => {
             isbn={book.isbn}
             releaseYear={book.releaseYear}
             summary={book.summary}
+            title={book.title}
           />
         ))}
 
