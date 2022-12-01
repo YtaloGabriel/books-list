@@ -1,3 +1,3 @@
-## CRUD for web application
+## Books CRUD with react
 
-This repository is the back end from "books-list" application.
+This repository is the front end from "books-list" application.
